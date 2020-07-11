@@ -1,0 +1,23 @@
+export SCREEN_RESOLUTION=1920x1080
+export THEME=Adwaita
+export CURSOR_THEME=$THEME          # Xcursor(5), check ~/.local/share/icons/THEME, /usr/local/share/icons/THEME/cursors
+export CURSOR_SIZE=16               # default 16 is too small for HiDPI display
+
+
+# 96 dpi scaled by 125%(120), 150%(144), 175%(168), 200%(192)
+export SCREEN_DPI=96
+export SCREEN_DPI_1024=$((SCREEN_DPI * 1024))   # required by xsettingsd and gtkrc
+
+export FONT_SIZE=13                             # default font size
+export WIDE_FONT_SIZE=$((FONT_SIZE + 1))        # CJK font size
+export SMALL_FONT_SIZE=$((FONT_SIZE - 2))       # small font size
+
+export TERM_BACKGROUND=black
+export TERM_FOREGROUND=white
+
+export ROFI_FONT_SIZE=13
+
+# export LATIN_MONO_FONT="Hack Nerd Font Mono, DejaVu Sans Mono,Source Code Pro"
+# export LATIN_MONO_FONT="Pragmata Pro Mono" #DejaVu Sans Mono, Source Code Pro
+
+export TERM_LIST="sakura urxvtcd mlterm lxterminal uxterm xterm"
