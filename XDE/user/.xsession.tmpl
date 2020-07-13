@@ -42,8 +42,7 @@ export_env_vars() {
     export XCURSOR_SIZE=@@CURSOR_SIZE@@
 
     ## affect i3-sensible-terminal
-    # [ "${TERMINAL:-}" ] || for term in urxvtcd mlterm lxterminal uxterm xterm; do
-    [ "${TERMINAL:-}" ] || for term in @@TERM_LIST@@; do
+    [ "${TERMINAL:-}" ] || for term in urxvtcd mlterm lxterminal uxterm xterm; do
 	which -s $term && export TERMINAL=$term && break
     done
 }

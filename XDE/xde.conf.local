@@ -20,4 +20,4 @@ export ROFI_FONT_SIZE=13
 # export LATIN_MONO_FONT="Pragmata Pro Mono" #DejaVu Sans Mono, Source Code Pro
 export LATIN_MONO_FONT="SauceCodePro Nerd Font" #DejaVu Sans Mono, Source Code Pro
 
-export TERM_LIST="sakura urxvtcd mlterm lxterminal uxterm xterm"
+# export TERM_LIST="sakura urxvtcd mlterm lxterminal uxterm xterm"
