@@ -50,7 +50,7 @@ sed -i -e "s/socks4.*127.0.0.1.*9050$/socks5 	$PROXY_IP 1080/g" /usr/local/etc/p
 sed -i -e 's/#quiet_mode/quiet_mode/g' /usr/local/etc/proxychains.conf
 sed -i -e "s/^# %wheel ALL=(ALL) ALL$/%wheel ALL=(ALL) ALL/g" /usr/local/etc/sudoers
 
-pkg install -y tmux bash zsh coreutils emacs-devel nerd-font
+pkg install -y git tmux bash zsh coreutils emacs-devel nerd-font sakura sbcl
 
 user_run chsh -s /usr/local/bin/zsh
 
