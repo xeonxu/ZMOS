@@ -80,8 +80,10 @@ i rxvt-unicode urxvt-font-size urxvt-perls
 # X input method
 i fcitx-qt5 zh-fcitx zh-fcitx-configtool zh-fcitx-libpinyin zh-fcitx-sunpinyin
 
-# Pulse Audio
-i pulseaudio pavucontrol
+# sound server: Pulse Audio, Jack, Pipewire, FreeBSD kernel mixer + sndiod + virtual_oss
+#i pulseaudio pavucontrol
+#i jackit       # FreeBSD doesn't have Jack 2 yet
+#i pipewire
 
 # extra fonts
 i dejavu hack-font noto zh-CJKUnifonts font-awesome
@@ -136,9 +138,9 @@ rsync -rlcv -b --backup-dir "$PWD/backup-system-$TIMESTAMP" \
     --exclude "*.append" --exclude "*.sample" --exclude "*.tmpl" --exclude ".*.sw*" --exclude "*~" --exclude ".DS_Store" --exclude ".git*" \
     "$XDE_HOME/system/" "$XDE_HOME/system-$MACHINE/" "$XDE_HOME/generated-system/" /
 
-: ${SUDO_USER:=$DOAS_USER}
-: ${SUDO_USER:=$LOGNAME}
-: ${SUDO_USER:=$USER}
+: ${SUDO_USER:=${DOAS_USER:-}}
+: ${SUDO_USER:=${LOGNAME:-}}
+: ${SUDO_USER:=${USER:-}}
 [ "$SUDO_USER" != "root" ] && [ -e "$PWD/backup-system-$TIMESTAMP" ] && chown -R "$SUDO_USER" "$PWD/backup-system-$TIMESTAMP"
 
 ifvm vmware chmod 555 /usr/local/etc/rc.d/xde-vmware-vmblock-fuse
